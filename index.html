@@ -5,42 +5,235 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="./assets/logo.jpeg">
-    <!-- Title: add your Portfolio websites's title here -->
-    <title>Prince Prajapati | Exploratory Data Analysis [EDA]</title>
 
-    <!-- Add some coding keywords below, Ex: (javascript, yourusername, etc) -->
-    <meta name="keywords" content="Prince_Prajapati, Prince Prajapati, programming lang" />
+    <title>Prince Prajapati | Data Analyst & AI/ML Enthusiast</title>
 
-    <!-- Improve your SEO by adding a small descrption of you -->
-    <meta name="description" content="Prince Prajapati | Exploratory Data Analysis[EDA]" />
-
-    <!-- Add a your png Logo to the assets folder and change the href attr accordingly  -->
-    <link rel="icon" type="image/png" href="./assets/logo.jpeg" />
-
-    <!-- Add your primary-theme color for the value of content -->
+    <meta name="keywords" content="Prince_Prajapati, Data Analyst, KNIME, Python Developer" />
+    <meta name="description" content="Portfolio of Prince Prajapati | Associate Engineer at Cygnet.One specializing in Data Analytics, AI/ML & Automation" />
     <meta name="theme-color" content="#36d1dc" />
 
-    <!-- link tags -->
     <link rel="preload" as="style" href="./css/main.css" />
     <link rel="stylesheet" href="./css/main.css" />
 
-    <!-- FontAwesome Icons link -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
       crossorigin="anonymous"
-      referrerpolicy="no-referrer"
     />
     <script defer src="./javascript/scrollreveal.min.js"></script>
-    <script
-      defer
-      type="text/javascript"
-      src="./javascript/scrollveal.js"
-    ></script>
+    <script defer type="text/javascript" src="./javascript/scrollveal.js"></script>
+    
+    <style>
+      /* Chatbot Styles */
+      .chat-widget {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+      }
 
+      .chat-button {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+        color: white;
+        border: none;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        transition: all 0.3s ease;
+      }
 
+      .chat-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+      }
+
+      .chat-container {
+        position: fixed;
+        bottom: 100px;
+        right: 30px;
+        width: 380px;
+        height: 550px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        display: none;
+        flex-direction: column;
+        z-index: 999;
+        overflow: hidden;
+      }
+
+      .chat-container.active {
+        display: flex;
+        animation: slideUp 0.3s ease;
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      .chat-header {
+        background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .chat-header h3 {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .chat-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .chat-messages {
+        flex: 1;
+        padding: 20px;
+        overflow-y: auto;
+        background: #f5f5f5;
+      }
+
+      .message {
+        margin-bottom: 15px;
+        display: flex;
+        gap: 10px;
+        animation: fadeIn 0.3s ease;
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+      .message.user {
+        flex-direction: row-reverse;
+      }
+
+      .message-content {
+        max-width: 70%;
+        padding: 12px 16px;
+        border-radius: 18px;
+        font-size: 14px;
+        line-height: 1.4;
+      }
+
+      .message.bot .message-content {
+        background: white;
+        color: #333;
+        border-bottom-left-radius: 4px;
+      }
+
+      .message.user .message-content {
+        background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+        color: white;
+        border-bottom-right-radius: 4px;
+      }
+
+      .chat-input-container {
+        padding: 15px;
+        background: white;
+        border-top: 1px solid #e0e0e0;
+        display: flex;
+        gap: 10px;
+      }
+
+      .chat-input {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 25px;
+        font-size: 14px;
+        outline: none;
+      }
+
+      .chat-input:focus {
+        border-color: #5b86e5;
+      }
+
+      .chat-send {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.2s;
+      }
+
+      .chat-send:hover {
+        transform: scale(1.1);
+      }
+
+      .typing-indicator {
+        display: flex;
+        gap: 4px;
+        padding: 12px 16px;
+        background: white;
+        border-radius: 18px;
+        width: fit-content;
+      }
+
+      .typing-indicator span {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #5b86e5;
+        animation: typing 1.4s infinite;
+      }
+
+      .typing-indicator span:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+
+      .typing-indicator span:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+
+      @keyframes typing {
+        0%, 60%, 100% {
+          transform: translateY(0);
+        }
+        30% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @media (max-width: 480px) {
+        .chat-container {
+          width: calc(100vw - 20px);
+          right: 10px;
+          left: 10px;
+          height: 500px;
+          bottom: 90px;
+        }
+      }
+    </style>
   </head>
+
   <body>
     <!-- Hero Section -->
     <div id="hero">
@@ -48,15 +241,15 @@
         <h1 class="hero-title">
           Hi, my name is <span class="text-color-main name">Prince Prajapati</span>
           <br />
-          I'm the Exploratory Data Analysis.
+          I build Data Pipelines, Automations & AI-Powered Analytical Solutions.
         </h1>
         <p class="hero-cta">
           <a class="cta-btn cta-btn--hero" href="#about">About Me</a>
         </p>
       </section>
       <a href="#about" class="scroll-down-link" aria-label="scroll-down">
-        <div class="scroll-down"></div
-      ></a>
+        <div class="scroll-down"></div>
+      </a>
     </div>
     <!-- /END Hero Section -->
 
@@ -66,23 +259,18 @@
         <h2 class="section-title">About Me</h2>
         <div class="row about-wrapper">
           <div class="about-wrapper__image">
-            <img
-              class="img-fluid"
-              src="./assets/Profile.png"
-              alt="Profile Image"
-              width="450"
-              height="350"
-            />
+            <img class="img-fluid" src="./assets/Me_Profile_Avatar.png" alt="Profile Image" />
           </div>
+
           <div class="about-wrapper__info">
             <p class="about-wrapper__info-text">
-              Hi! My name is Prince Prajapati. Currently, I am pursuing my BE in Electronics and Communication from Vishwakarma government engineering college.
+              Hi! I'm Prince Prajapati, a recent graduate (June 2025) with a BE in Electronics and Communication from Vishwakarma Government Engineering College.
             </p>
             <p class="about-wrapper__info-text">
-              I am a very enthusiastic boy, who loves to solve real life problem with the help of coding in this letest era. I have worked on Data visulations, Embedded System Projects and I want to grow my career in Data Science.
+              Currently working as an Associate Engineer at Cygnet.One, I specialize in Data Analytics, AI/ML, KNIME workflow automation, Python development, and building scalable ETL pipelines. With 6+ internships across multiple organizations, I'm passionate about solving real-world problems using data-driven solutions.
             </p>
             <span class="about-wrapper__cta">
-              <a href="https://drive.google.com/file/d/1usl_JyAUFL1GN66MQYGwsKHe_Opaa6rj/view?usp=sharing" class="cta-btn cta-btn--resume" target="_blank">View Resume</a>
+              <a href="https://drive.google.com/file/d/1WwN_jBuWCUP8pHJ63zi6NDV7WZMqjJzK/view?usp=sharing" class="cta-btn cta-btn--resume" target="_blank">View Resume</a>
             </span>
           </div>
         </div>
@@ -96,37 +284,33 @@
         <div class="project-wrapper">
           <h2 class="section-title dark-blue-text">Projects</h2>
 
-
-           <!-- Each .row is a project -->
-           <article class="row">
+          <!-- AI Data Analysis Agent -->
+          <article class="row">
             <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Bangalore House Price Prediction</h3>
+              <h3 class="project-wrapper__text-title">AI-Based Data Analysis Agent</h3>
               <p class="project-wrapper__text-info">
-                This project uses machine learning to predict house prices in Bangalore, India, based on features like location, size, number of bathrooms, and square footage. By analyzing real estate trends and applying a regression model, the project helps estimate property prices across various neighborhoods. Through data cleaning, feature engineering, and outlier removal, the model achieved approximately 87% accuracy. The insights provided by this project can assist potential buyers, sellers, and real estate agents in making informed decisions about Bangalore's housing market.
+                Designed an AI-powered data analysis agent that automatically analyzes datasets and generates insights using prompt engineering and OpenAI API integration. Built an interactive Streamlit interface enabling users to upload data and receive automated analytical reports with comprehensive visualizations.
               </p>
-              <div class="project-wrapper__text-btns">
+              <!-- <div class="project-wrapper__text-btns">
                 <a
-                href="https://colab.research.google.com/drive/1hiG-P9UppoS1X2XRORdhmmqIMeXGxc57"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="cta-btn cta-btn--hero cta-btn--projects"
-                >See Live</a
-                >
-                <a href="https://colab.research.google.com/drive/1hiG-P9UppoS1X2XRORdhmmqIMeXGxc57" target="_blank" class="cta-btn text-color-main"
-                >Source Code</a
-                >
-              </div>
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-btn cta-btn--hero cta-btn--projects"
+                >See Live</a>
+                <a href="#" target="_blank" class="cta-btn text-color-main">Source Code</a>
+              </div> -->
             </div>
             
             <div class="project-wrapper__image">
-              <a href="https://github.com/kingprince35/Bangalore-House-Price-Prediction/tree/main" target="_blank" rel="noopener noreferrer">
+              <a href="#" target="_blank" rel="noopener noreferrer">
                 <div class="thumbnail rounded">
                   <img
-                  src="./assets/Banglore_img.png"
-                  class="img-fluid"
-                  alt="Project Image"
-                  width="1366"
-                  height="767"
+                    src="./assets/ai-agent.png"
+                    class="img-fluid"
+                    alt="AI Data Analysis Agent"
+                    width="1366"
+                    height="767"
                   />
                 </div>
               </a>
@@ -134,24 +318,89 @@
           </article>
           <!-- /END Project -->
 
-           <!-- Each .row is a project -->
-           <article class="row">
+          <!-- KNIME Invoice Automation -->
+          <article class="row">
             <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Bank Loan Data Explorer</h3>
+              <h3 class="project-wrapper__text-title">KNIME Invoice Automation & E-Invoicing Workflow</h3>
               <p class="project-wrapper__text-info">
-                In my Bank Loan Analysis project, I applied SQL to efficiently extract and preprocess loan data, focusing on key variables like credit scores, income levels, and loan amounts. Using Tableau, I developed an interactive dashboard that provides a comprehensive view of loan approval rates, default probabilities, and borrower profiles. This project enabled the identification of critical risk factors and trends, offering valuable insights for optimizing loan approval strategies and minimizing default risks. The result is a powerful tool that helps financial institutions make data-driven lending decisions with greater accuracy and confidence.
+                Developed end-to-end KNIME workflow for invoice processing including validation, mapping, and JSON/XML generation. Implemented automation using Linux shell scripting and SFTP for enterprise-level ETL pipelines and data validation deployed on production servers.
+              </p>
+              <!-- <div class="project-wrapper__text-btns">
+                <a
+                  href="#"
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="cta-btn cta-btn--hero cta-btn--projects"
+                >See Live</a>
+                <a href="#" target="_blank" class="cta-btn text-color-main">Source Code</a>
+              </div> -->
+            </div>
+            
+            <div class="project-wrapper__image">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="./assets/knime-invoice.png"
+                    class="img-fluid"
+                    alt="KNIME Invoice Automation"
+                    width="1366"
+                    height="767"
+                  />
+                </div>
+              </a>
+            </div>
+          </article>
+          <!-- /END Project -->
+
+          <!-- CA Dashboard Audit Tool -->
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">CA Dashboard Audit Tool with Database Integration</h3>
+              <p class="project-wrapper__text-info">
+                Developed comprehensive CA forms audit dashboard with database integration featuring outlier detection, missing value analysis, and festival/quarter-wise analysis with multiple chart visualizations. Currently in active use for CA consulting and audit automation.
+              </p>
+              <!-- <div class="project-wrapper__text-btns">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-btn cta-btn--hero cta-btn--projects"
+                >See Live</a>
+                <a href="#" target="_blank" class="cta-btn text-color-main">Source Code</a>
+              </div> -->
+            </div>
+            
+            <div class="project-wrapper__image">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="./assets/ca-dashboard.png"
+                    class="img-fluid"
+                    alt="CA Dashboard Audit Tool"
+                    width="1366"
+                    height="767"
+                  />
+                </div>
+              </a>
+            </div>
+          </article>
+          <!-- /END Project -->
+
+          <!-- Bank Loan Analysis -->
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">Bank Loan Data Analysis Dashboard</h3>
+              <p class="project-wrapper__text-info">
+                Analyzed loan approval data to understand customer behavior, trends, and risk factors using decision support dashboards. Applied SQL for data extraction and Tableau for interactive visualizations, enabling financial institutions to make data-driven lending decisions.
               </p>
               <div class="project-wrapper__text-btns">
                 <a
-                href="https://public.tableau.com/views/Bank_Loan_17234912872280/Summary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="cta-btn cta-btn--hero cta-btn--projects"
-                >See Live</a
-                >
-                <a href="https://drive.google.com/file/d/1RDk9SGCSiZi4E4II1hb7NtZRf-LdpSSF/view?usp=sharing" target="_blank" class="cta-btn text-color-main"
-                >Source Code</a
-                >
+                  href="https://public.tableau.com/views/Bank_Loan_17234912872280/Summary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-btn cta-btn--hero cta-btn--projects"
+                >See Live</a>
+                <a href="https://drive.google.com/file/d/1RDk9SGCSiZi4E4II1hb7NtZRf-LdpSSF/view?usp=sharing" target="_blank" class="cta-btn text-color-main">Source Code</a>
               </div>
             </div>
             
@@ -159,88 +408,9 @@
               <a href="https://public.tableau.com/views/Bank_Loan_17234912872280/Summary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" rel="noopener noreferrer">
                 <div class="thumbnail rounded">
                   <img
-                  src="./assets/Overview.jpeg"
-                  class="img-fluid"
-                  alt="Project Image"
-                  width="1366"
-                  height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
-          <!-- /END Project -->
-
-                    <!-- Each .row is a project -->
-                    <article class="row">
-                      <div class="project-wrapper__text">
-                        <h3 class="project-wrapper__text-title">Social Media Analysis</h3>
-                        <p class="project-wrapper__text-info">
-                          This project analyzes Netflix data using Python in Google Colab. Key completed tasks include:
-          
-                          Data Cleaning: Handled missing values and standardized data formats.
-                          Exploratory Data Analysis: Investigated content types, release trends, ratings, and genres.
-                          Upcoming tasks involve advanced analysis, enhanced visualizations, and predictive modeling to further understand content trends and user preferences.
-                        
-                        </p>
-                        <div class="project-wrapper__text-btns">
-                          <a
-                            href="https://app.powerbi.com/reportEmbed?reportId=44e00c30-123d-4004-9457-e123511d90fb&autoAuth=true&ctid=8b7de264-0f52-4308-b632-89d93e93c254"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="cta-btn cta-btn--hero cta-btn--projects"
-                            >See Live</a
-                          >
-                          <a href="https://github.com/kingprince35/Social-Media-Analysis/tree/main/Colab%20Code" target="_blank" class="cta-btn text-color-main"
-                            >Source Code</a
-                          >
-                        </div>
-                      </div>
-          
-                      <div class="project-wrapper__image">
-                        <a href="https://app.powerbi.com/reportEmbed?reportId=44e00c30-123d-4004-9457-e123511d90fb&autoAuth=true&ctid=8b7de264-0f52-4308-b632-89d93e93c254" target="_blank" rel="noopener noreferrer">
-                          <div class="thumbnail rounded">
-                            <img
-                              src="./assets/Music_dashboard.jpeg"
-                              class="img-fluid"
-                              alt="Project Image"
-                              width="1366"
-                              height="767"
-                            />
-                          </div>
-                        </a>
-                      </div>
-                    </article> 
-                  <!-- /END Project -->
-
-          <!-- Each .row is a project -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Netflix dashboard with Tableau</h3>
-              <p class="project-wrapper__text-info">
-                The Netflix Dashboard created using Tableau offers a comprehensive visualization of various aspects of Netflix's content and user engagement. It provides valuable insights into the distribution of movies and TV shows across different regions, genres, ratings, and over time
-              </p>
-              <div class="project-wrapper__text-btns">
-                <a
-                  href="https://public.tableau.com/app/profile/prince.prajapati/viz/Netflix_data_17166351628430/Netflix?publish=yes"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="cta-btn cta-btn--hero cta-btn--projects"
-                  >See Live</a
-                >
-                <a href="https://drive.google.com/file/d/1ws2cTAz37uT_Kzdx5SmnRvnLke3nU-JO/view?usp=sharing" target="_blank" class="cta-btn text-color-main"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-
-            <div class="project-wrapper__image">
-              <a href="https://public.tableau.com/app/profile/prince.prajapati/viz/Netflix_data_17166351628430/Netflix?publish=yes" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/Netflix.png"
+                    src="./assets/Overview.jpeg"
                     class="img-fluid"
-                    alt="Project Image"
+                    alt="Bank Loan Analysis"
                     width="1366"
                     height="767"
                   />
@@ -250,83 +420,38 @@
           </article>
           <!-- /END Project -->
 
-          <!-- Each .row is a project -->
+          <!-- Social Media Analysis -->
           <article class="row">
             <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Netflix Analysis</h3>
+              <h3 class="project-wrapper__text-title">Social Media Analysis Dashboard</h3>
               <p class="project-wrapper__text-info">
-                This project analyzes Netflix data using Python in Google Colab. Key completed tasks include:
-
-                Data Cleaning: Handled missing values and standardized data formats.
-                Exploratory Data Analysis: Investigated content types, release trends, ratings, and genres.
-                Upcoming tasks involve advanced analysis, enhanced visualizations, and predictive modeling to further understand content trends and user preferences.
-              
+                Analyzed social media data from Instagram, YouTube, TikTok, and music platforms to understand engagement trends and performance metrics. Created interactive Power BI dashboards presenting insights on user behavior patterns and content performance across multiple platforms.
               </p>
               <div class="project-wrapper__text-btns">
                 <a
-                  href="https://drive.google.com/file/d/1ws2cTAz37uT_Kzdx5SmnRvnLke3nU-JO/view?usp=sharing"
+                  href="https://app.powerbi.com/reportEmbed?reportId=44e00c30-123d-4004-9457-e123511d90fb&autoAuth=true&ctid=8b7de264-0f52-4308-b632-89d93e93c254"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="cta-btn cta-btn--hero cta-btn--projects"
-                  >See Live</a
-                >
-                <a href="https://colab.research.google.com/drive/1oxTbZMwOV_oPopWF5hAbA9lVVc-DiibF" target="_blank" class="cta-btn text-color-main"
-                  >Source Code</a
-                >
+                >See Live</a>
+                <a href="https://github.com/kingprince35/Social-Media-Analysis/tree/main/Colab%20Code" target="_blank" class="cta-btn text-color-main">Source Code</a>
               </div>
             </div>
 
             <div class="project-wrapper__image">
-              <a href="https://colab.research.google.com/drive/1oxTbZMwOV_oPopWF5hAbA9lVVc-DiibF" target="_blank" rel="noopener noreferrer">
+              <a href="https://app.powerbi.com/reportEmbed?reportId=44e00c30-123d-4004-9457-e123511d90fb&autoAuth=true&ctid=8b7de264-0f52-4308-b632-89d93e93c254" target="_blank" rel="noopener noreferrer">
                 <div class="thumbnail rounded">
                   <img
-                    src="./assets/Netflix_colab.png"
+                    src="./assets/Music_dashboard.jpeg"
                     class="img-fluid"
-                    alt="Project Image"
+                    alt="Social Media Analysis"
                     width="1366"
                     height="767"
                   />
                 </div>
               </a>
             </div>
-          </article>
-          <!-- /END Project -->
-          
-          <!-- Each .row is a project -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Adidas Data Analysis</h3>
-              <p class="project-wrapper__text-info">
-                Explore the intricacies of Adidas' sales data through a detailed Exploratory Data Analysis (EDA) in this project. Key features include data visualization, trend analysis, and insights into sales performance across various dimensions such as product categories, regions, and time periods. The analysis identifies patterns, highlights top-performing products, and offers strategic recommendations for future sales growth. Ideal for data enthusiasts, market analysts, and business strategists, this project provides a comprehensive understanding of Adidas market dynamics.
-              </p>
-              <div class="project-wrapper__text-btns">
-                <a
-                href="https://colab.research.google.com/drive/1YqsyKd-SGij3zZpbxdH4vukKy_-1HG-n?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="cta-btn cta-btn--hero cta-btn--projects"
-                >See Live</a
-                >
-                <a href="https://colab.research.google.com/drive/1YqsyKd-SGij3zZpbxdH4vukKy_-1HG-n?usp=sharing" target="_blank" class="cta-btn text-color-main"
-                >Source Code</a
-                >
-              </div>
-            </div>
-            
-            <div class="project-wrapper__image">
-              <a href="https://colab.research.google.com/drive/1YqsyKd-SGij3zZpbxdH4vukKy_-1HG-n?usp=sharing" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                  src="./assets/Adidas.png"
-                  class="img-fluid"
-                  alt="Project Image"
-                  width="1366"
-                  height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
+          </article> 
           <!-- /END Project -->
 
         </div>
@@ -334,69 +459,137 @@
     </section> 
     <!-- End Projects Section -->
 
-    <!-- Contact Section -->
+    <!-- Professional Expression Section -->
+    <section id="expression">
+      <div class="container">
+        <h2 class="section-title dark-blue-text">My Professional Journey</h2>
+
+        <div class="expression-content">
+          <p>
+            I am currently working at <span class="highlight">Cygnet.One</span> as an
+            <span class="highlight">Associate Engineer</span> (July 2025 - Present) specializing in
+            <span class="highlight">Data Analytics, AI & Automation</span>.
+            Prior to this, I completed a 6-month internship (January - June 2025) as a Data Analytics Intern
+            at the same organization, gaining hands-on experience with real-world datasets and AI/ML applications.
+          </p>
+
+          <p>
+            I specialize in building automated data workflows using
+            <span class="highlight">KNIME Analytics Platform</span>, designing scalable ETL pipelines,
+            performing advanced data analysis, and developing Python-based automation scripts including
+            Selenium web automation. I work extensively with <span class="highlight">PostgreSQL</span>,
+            create interactive dashboards using <span class="highlight">Power BI and Tableau</span>,
+            and build AI-powered analytical solutions.
+          </p>
+
+          <p>
+            With experience across <span class="highlight">6+ internships</span> at organizations including
+            InternQ, CSRBOX, Grownited, IBM, and Oasis Infobyte, I've developed a strong foundation in
+            data handling, visualization, and machine learning. I regularly collaborate with cross-functional teams,
+            communicate with clients to gather requirements, and deliver production-ready automation solutions
+            that drive business impact.
+          </p>
+        </div>
+
+      </div>
+    </section>
+    <!-- END Expression Section -->
+
+    <!-- Tools & Libraries Section -->
+    <section id="tools">
+      <div class="container">
+        <h2 class="section-title dark-blue-text">Tools & Technologies</h2>
+
+        <div class="tools-grid">
+          <div class="tool-card"><p>Python</p></div>
+          <div class="tool-card"><p>SQL</p></div>
+          <div class="tool-card"><p>PostgreSQL</p></div>
+          <div class="tool-card"><p>KNIME</p></div>
+          <div class="tool-card"><p>Power BI</p></div>
+          <div class="tool-card"><p>Tableau</p></div>
+          <div class="tool-card"><p>NumPy</p></div>
+          <div class="tool-card"><p>Pandas</p></div>
+          <div class="tool-card"><p>Matplotlib</p></div>
+          <div class="tool-card"><p>Seaborn</p></div>
+          <div class="tool-card"><p>Scikit-learn</p></div>
+          <div class="tool-card"><p>Streamlit</p></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Tools Section -->
+
+    <!-- Contact -->
     <section id="contact">
       <div class="container">
         <h2 class="section-title">Contact</h2>
         <div class="contact-wrapper">
-          <p class="contact-wrapper__text">prajapatiprince903@gmail.com</p>
-          <a href="mailto:prajapatiprince903@gmail.com" class="cta-btn cta-btn--resume">Call to Action</a>
+          <p class="contact-wrapper__text">prajapatiprince982@gmail.com</p>
+          <a href="mailto:prajapatiprince982@gmail.com" class="cta-btn cta-btn--resume">Get In Touch</a>
         </div>
       </div>
     </section>
-    <!-- END Contact Section -->
 
-    <!-- Footer Section -->
+    <!-- Chatbot Widget -->
+    <div class="chat-widget">
+      <button class="chat-button" id="chatButton" aria-label="Open chat">
+        <i class="fas fa-comments"></i>
+      </button>
+      
+      <div class="chat-container" id="chatContainer">
+        <div class="chat-header">
+          <h3>Ask me anything!</h3>
+          <button class="chat-close" id="chatClose">&times;</button>
+        </div>
+        
+        <div class="chat-messages" id="chatMessages">
+          <div class="message bot">
+            <div class="message-content">
+              Hi! 👋 I'm Prince's AI assistant. Ask me anything about his experience, projects, or skills!
+            </div>
+          </div>
+        </div>
+        
+        <div class="chat-input-container">
+          <input 
+            type="text" 
+            class="chat-input" 
+            id="chatInput" 
+            placeholder="Type your question..."
+            autocomplete="off"
+          />
+          <button class="chat-send" id="chatSend">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
     <footer class="footer">
       <div class="container">
-        <a href="#hero" class="back-to-top" aria-label="go back to top">
-          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        <a href="#hero" class="back-to-top">
+          <i class="fa fa-angle-up fa-2x"></i>
         </a>
+
         <div class="social-links">
-          <a
-            href="https://x.com/PrincePraj3378"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="twitter"
-          >
-            <i class="fa-brands fa-twitter"></i>
-          </a>
-       
-          <a
-            href="https://www.linkedin.com/in/prince-prajapati-6b988823a/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="linkedin"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a
-            href="https://github.com/kingprince35"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="github"
-          >
-            <i class="fa-brands fa-github"></i>
-          </a>
+          <a href="https://x.com/PrincePraj3378" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/prince-prajapati-6b988823a/" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/kingprince35" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
+
         <hr />
-        <p class="footer__text"> &copy;Copyright PrincePrajapati. All Rights Reserved   
-           <span id="year"></span> 
-          
-          <br />- Design by <a
-          href="https://www.instagram.com/_prince_3_5/"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Prince Prajapati</a>
+        <p class="footer__text">
+          © Copyright
+          <span id="year"></span> Prince Prajapati — Data Analyst & AI/ML Engineer
         </p>
       </div>
     </footer>
-    <!-- END Footer Section -->
 
     <script>
-      document.getElementById("year").textContent = new Date().getFullYear()
+      document.getElementById("year").textContent = new Date().getFullYear();
     </script>
+
     <script src="./javascript/vanilla-tilt.min.js"></script>
     <script type="text/javascript" src="./javascript/valtilt.js"></script>
+    <script src="./javascript/chatbot.js"></script>
   </body>
 </html>
