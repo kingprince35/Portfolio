@@ -6,11 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="./assets/logo.jpeg">
 
-    <title>Prince Prajapati | Data Analyst & AI/ML Enthusiast</title>
+    <title>Prince Prajapati | AI Engineer — LLM, GenAI & RAG Systems</title>
 
-    <meta name="keywords" content="Prince_Prajapati, Data Analyst, KNIME, Python Developer" />
-    <meta name="description" content="Portfolio of Prince Prajapati | Associate Engineer at Cygnet.One specializing in Data Analytics, AI/ML & Automation" />
+    <meta name="keywords" content="Prince Prajapati, AI Engineer, LLM, GenAI, RAG, FastAPI, Python Developer, Data Analytics" />
+    <meta name="description" content="Portfolio of Prince Prajapati | AI Engineer at Cygnet.One building production LLM, GenAI & RAG systems with Python, FastAPI and Docker" />
     <meta name="theme-color" content="#36d1dc" />
+
+    <!-- Open Graph / social share -->
+    <meta property="og:title" content="Prince Prajapati | AI Engineer — LLM, GenAI & RAG Systems" />
+    <meta property="og:description" content="AI Engineer building production LLM, GenAI & RAG systems with Python, FastAPI and Docker." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kingprince35.github.io/Portfolio/" />
+    <meta property="og:image" content="https://kingprince35.github.io/Portfolio/assets/Me_Profile_Avatar.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Analytics (GA4) — replace G-XXXXXXXXXX with your real Measurement ID from analytics.google.com -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
     <link rel="preload" as="style" href="./css/main.css" />
     <link rel="stylesheet" href="./css/main.css" />
@@ -231,6 +248,266 @@
           bottom: 90px;
         }
       }
+
+      /* Featured (text-only) project cards */
+      .featured-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.6rem;
+        margin-bottom: 3.5rem;
+      }
+
+      .feat-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        padding: 1.9rem;
+        border-radius: 14px;
+        background: #ffffff;
+        border: 1px solid #e8edf3;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+      }
+
+      .feat-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+      }
+
+      .feat-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 30px rgba(91, 134, 229, 0.22);
+      }
+
+      .feat-card__icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        color: #ffffff;
+        margin-bottom: 1.1rem;
+        background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+        box-shadow: 0 6px 14px rgba(91, 134, 229, 0.35);
+      }
+
+      .feat-card__title {
+        font-size: 1.18rem;
+        font-weight: 700;
+        color: #2b2b2b;
+        margin: 0 0 0.65rem;
+        line-height: 1.35;
+      }
+
+      .feat-card__desc {
+        font-size: 0.93rem;
+        line-height: 1.6;
+        color: #555;
+        margin: 0 0 1.15rem;
+        flex: 1;
+      }
+
+      .feat-card__tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .feat-card__tag {
+        font-size: 0.72rem;
+        font-weight: 600;
+        padding: 0.3rem 0.65rem;
+        border-radius: 50px;
+        background: rgba(91, 134, 229, 0.1);
+        color: #3a6fd8;
+        white-space: nowrap;
+      }
+
+      .feat-card__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .feat-card__link {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #5b86e5;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        transition: color 0.2s ease;
+      }
+
+      .feat-card__link:hover {
+        color: #36d1dc;
+      }
+
+      .feat-card__status {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: #1aa05a;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      @media (max-width: 600px) {
+        .featured-grid {
+          grid-template-columns: 1fr;
+        }
+        .feat-card {
+          padding: 1.5rem;
+        }
+      }
+
+      /* Published library highlight card */
+      .feat-card--library::before {
+        background: linear-gradient(135deg, #f7b733 0%, #fc4a1a 100%);
+      }
+
+      .feat-card__badge {
+        position: absolute;
+        top: 1.1rem;
+        right: 1.1rem;
+        font-size: 0.66rem;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        padding: 0.28rem 0.6rem;
+        border-radius: 50px;
+        color: #fff;
+        background: linear-gradient(135deg, #f7b733 0%, #fc4a1a 100%);
+      }
+
+      .feat-card__code {
+        display: block;
+        font-family: "Courier New", monospace;
+        font-size: 0.82rem;
+        background: #1b1f33;
+        color: #36d1dc;
+        padding: 0.6rem 0.85rem;
+        border-radius: 8px;
+        margin-bottom: 1rem;
+        overflow-x: auto;
+      }
+
+      /* Stats strip */
+      .stats-strip {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .stat-item {
+        padding: 1.4rem 1rem;
+      }
+
+      .stat-item__num {
+        font-size: 3.2rem;
+        font-weight: 700;
+        line-height: 1;
+        background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .stat-item__label {
+        margin-top: 0.6rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #555;
+      }
+
+      /* Theme (dark mode) toggle button */
+      .theme-toggle {
+        position: fixed;
+        bottom: 30px;
+        right: 100px;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        z-index: 1000;
+        font-size: 20px;
+        color: #fff;
+        background: linear-gradient(135deg, #36d1dc 0%, #5b86e5 100%);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+
+      .theme-toggle:hover {
+        transform: scale(1.1);
+      }
+
+      @media (max-width: 480px) {
+        .theme-toggle {
+          bottom: 34px;
+          right: 100px;
+          width: 48px;
+          height: 48px;
+          font-size: 18px;
+        }
+      }
+
+      /* ===== Dark mode overrides ===== */
+      body.dark-mode #hero {
+        background: #0f1220;
+        color: #e9ecf5;
+      }
+
+      body.dark-mode .scroll-down {
+        border-color: #e9ecf5;
+      }
+
+      body.dark-mode #projects {
+        background: #141829;
+        color: #e9ecf5;
+      }
+
+      body.dark-mode #projects .dark-blue-text,
+      body.dark-mode #expression .section-title,
+      body.dark-mode #expression .expression-content p {
+        color: #e9ecf5 !important;
+      }
+
+      body.dark-mode #expression {
+        background: linear-gradient(135deg, #11152a 0%, #0f1220 100%);
+        color: #e9ecf5;
+      }
+
+      body.dark-mode .feat-card {
+        background: #1b1f33;
+        border-color: #2a3050;
+      }
+
+      body.dark-mode .feat-card__title {
+        color: #f3f5fc;
+      }
+
+      body.dark-mode .feat-card__desc {
+        color: #b8c0d8;
+      }
+
+      body.dark-mode .stat-item__label {
+        color: #b8c0d8;
+      }
     </style>
   </head>
 
@@ -241,7 +518,7 @@
         <h1 class="hero-title">
           Hi, my name is <span class="text-color-main name">Prince Prajapati</span>
           <br />
-          I build Data Pipelines, Automations & AI-Powered Analytical Solutions.
+          AI Engineer | LLM and GenAI | RAG Systems | Python | FastAPI | Docker
         </h1>
         <p class="hero-cta">
           <a class="cta-btn cta-btn--hero" href="#about">About Me</a>
@@ -264,10 +541,10 @@
 
           <div class="about-wrapper__info">
             <p class="about-wrapper__info-text">
-              Hi! I'm Prince Prajapati, a recent graduate (June 2025) with a BE in Electronics and Communication from Vishwakarma Government Engineering College.
+              Hi! I'm Prince Prajapati, an AI Engineer and a recent graduate (June 2025) with a BE in Electronics and Communication from Vishwakarma Government Engineering College.
             </p>
             <p class="about-wrapper__info-text">
-              Currently working as an Associate Engineer at Cygnet.One, I specialize in Data Analytics, AI/ML, KNIME workflow automation, Python development, and building scalable ETL pipelines. With 6+ internships across multiple organizations, I'm passionate about solving real-world problems using data-driven solutions.
+              As an Associate Software Engineer (Data Analytics & AI) at Cygnet.One, I build production GenAI and LLM systems — RAG pipelines, FastAPI backends, and Docker-deployed ML services — alongside scalable ETL automation and data analytics. With 6+ internships and an open-source Python package on PyPI, I'm passionate about turning real-world problems into reliable, intelligent software.
             </p>
             <span class="about-wrapper__cta">
               <a href="https://drive.google.com/file/d/1WwN_jBuWCUP8pHJ63zi6NDV7WZMqjJzK/view?usp=sharing" class="cta-btn cta-btn--resume" target="_blank">View Resume</a>
@@ -282,177 +559,271 @@
     <section id="projects">
       <div class="container">
         <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">Projects</h2>
 
-          <!-- AI Data Analysis Agent -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">AI-Based Data Analysis Agent</h3>
-              <p class="project-wrapper__text-info">
-                Designed an AI-powered data analysis agent that automatically analyzes datasets and generates insights using prompt engineering and OpenAI API integration. Built an interactive Streamlit interface enabling users to upload data and receive automated analytical reports with comprehensive visualizations.
-              </p>
-              <!-- <div class="project-wrapper__text-btns">
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="cta-btn cta-btn--hero cta-btn--projects"
-                >See Live</a>
-                <a href="#" target="_blank" class="cta-btn text-color-main">Source Code</a>
-              </div> -->
+          <!-- Stats Strip -->
+          <div class="stats-strip">
+            <div class="stat-item">
+              <div class="stat-item__num">90%</div>
+              <div class="stat-item__label">ML Model Accuracy</div>
             </div>
-            
-            <div class="project-wrapper__image">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/Data_analysis_agent.jpeg"
-                    class="img-fluid"
-                    alt="AI Data Analysis Agent"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
+            <div class="stat-item">
+              <div class="stat-item__num">70%</div>
+              <div class="stat-item__label">Research Time Reduced</div>
             </div>
-          </article>
-          <!-- /END Project -->
+            <div class="stat-item">
+              <div class="stat-item__num">80%</div>
+              <div class="stat-item__label">Manual Effort Cut</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-item__num">20x</div>
+              <div class="stat-item__label">Faster Data Sync</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-item__num">6+</div>
+              <div class="stat-item__label">Internships</div>
+            </div>
+          </div>
+          <!-- /END Stats Strip -->
 
-          <!-- KNIME Invoice Automation -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">KNIME Invoice Automation & E-Invoicing Workflow</h3>
-              <p class="project-wrapper__text-info">
-                Developed end-to-end KNIME workflow for invoice processing including validation, mapping, and JSON/XML generation. Implemented automation using Linux shell scripting and SFTP for enterprise-level ETL pipelines and data validation deployed on production servers.
-              </p>
-              <!-- <div class="project-wrapper__text-btns">
-                <a
-                  href="#"
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  class="cta-btn cta-btn--hero cta-btn--projects"
-                >See Live</a>
-                <a href="#" target="_blank" class="cta-btn text-color-main">Source Code</a>
-              </div> -->
-            </div>
-            
-            <div class="project-wrapper__image">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/knime-invoice.png"
-                    class="img-fluid"
-                    alt="KNIME Invoice Automation"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
-          <!-- /END Project -->
+          <h2 class="section-title dark-blue-text" style="margin-top:5rem;">Projects</h2>
 
-          <!-- CA Dashboard Audit Tool -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">CA Dashboard Audit Tool with Database Integration</h3>
-              <p class="project-wrapper__text-info">
-                Developed comprehensive CA forms audit dashboard with database integration featuring outlier detection, missing value analysis, and festival/quarter-wise analysis with multiple chart visualizations. Currently in active use for CA consulting and audit automation.
-              </p>
-              <!-- <div class="project-wrapper__text-btns">
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="cta-btn cta-btn--hero cta-btn--projects"
-                >See Live</a>
-                <a href="#" target="_blank" class="cta-btn text-color-main">Source Code</a>
-              </div> -->
-            </div>
-            
-            <div class="project-wrapper__image">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/ca-dashboard.png"
-                    class="img-fluid"
-                    alt="CA Dashboard Audit Tool"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
-          <!-- /END Project -->
+          <!-- Featured text-only project cards -->
+          <div class="featured-grid">
 
-          <!-- Bank Loan Analysis -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Bank Loan Data Analysis Dashboard</h3>
-              <p class="project-wrapper__text-info">
-                Analyzed loan approval data to understand customer behavior, trends, and risk factors using decision support dashboards. Applied SQL for data extraction and Tableau for interactive visualizations, enabling financial institutions to make data-driven lending decisions.
+            <!-- mlreadyscore (Published PyPI Library) -->
+            <article class="feat-card feat-card--library">
+              <span class="feat-card__badge"><i class="fab fa-python"></i> Published on PyPI</span>
+              <div class="feat-card__icon" style="background:linear-gradient(135deg,#f7b733 0%,#fc4a1a 100%);box-shadow:0 6px 14px rgba(252,74,26,0.35);"><i class="fas fa-box-open"></i></div>
+              <h3 class="feat-card__title">mlreadyscore — ML Data Readiness Package</h3>
+              <p class="feat-card__desc">
+                An open-source Python package that scores any dataset's ML-readiness (0–100 with A+ to F grades) via 9 automated checks — missing values, outliers, multicollinearity, class imbalance and more — with actionable fix recommendations. Supports CSV, Excel, JSON and Parquet, and exports reports as dict/JSON.
               </p>
-              <div class="project-wrapper__text-btns">
-                <a
-                  href="https://public.tableau.com/views/Bank_Loan_17234912872280/Summary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="cta-btn cta-btn--hero cta-btn--projects"
-                >See Live</a>
-                <a href="https://drive.google.com/file/d/1RDk9SGCSiZi4E4II1hb7NtZRf-LdpSSF/view?usp=sharing" target="_blank" class="cta-btn text-color-main">Source Code</a>
+              <code class="feat-card__code">pip install mlreadyscore</code>
+              <div class="feat-card__tags">
+                <span class="feat-card__tag">Python</span>
+                <span class="feat-card__tag">Pandas</span>
+                <span class="feat-card__tag">PyPI Package</span>
+                <span class="feat-card__tag">Open Source</span>
+                <span class="feat-card__tag">Data Quality</span>
               </div>
-            </div>
-            
-            <div class="project-wrapper__image">
-              <a href="https://public.tableau.com/views/Bank_Loan_17234912872280/Summary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/Overview.jpeg"
-                    class="img-fluid"
-                    alt="Bank Loan Analysis"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
-          <!-- /END Project -->
-
-          <!-- Social Media Analysis -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Social Media Analysis Dashboard</h3>
-              <p class="project-wrapper__text-info">
-                Analyzed social media data from Instagram, YouTube, TikTok, and music platforms to understand engagement trends and performance metrics. Created interactive Power BI dashboards presenting insights on user behavior patterns and content performance across multiple platforms.
-              </p>
-              <div class="project-wrapper__text-btns">
-                <a
-                  href="https://app.powerbi.com/reportEmbed?reportId=44e00c30-123d-4004-9457-e123511d90fb&autoAuth=true&ctid=8b7de264-0f52-4308-b632-89d93e93c254"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="cta-btn cta-btn--hero cta-btn--projects"
-                >See Live</a>
-                <a href="https://github.com/kingprince35/Social-Media-Analysis/tree/main/Colab%20Code" target="_blank" class="cta-btn text-color-main">Source Code</a>
+              <div class="feat-card__footer">
+                <a class="feat-card__link" href="https://pypi.org/project/mlreadyscore/" target="_blank" rel="noopener noreferrer"><i class="fas fa-box"></i> PyPI</a>
+                <a class="feat-card__link" href="https://github.com/kingprince35/mlreadyscore" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Source</a>
               </div>
-            </div>
+            </article>
+            <!-- /END Project -->
 
-            <div class="project-wrapper__image">
-              <a href="https://app.powerbi.com/reportEmbed?reportId=44e00c30-123d-4004-9457-e123511d90fb&autoAuth=true&ctid=8b7de264-0f52-4308-b632-89d93e93c254" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/Music_dashboard.jpeg"
-                    class="img-fluid"
-                    alt="Social Media Analysis"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article> 
-          <!-- /END Project -->
+            <!-- EInvoice Nexus System -->
+            <article class="feat-card">
+              <div class="feat-card__icon"><i class="fas fa-brain"></i></div>
+              <h3 class="feat-card__title">EInvoice Nexus System v2.5 — Enterprise AI Compliance Platform</h3>
+              <p class="feat-card__desc">
+                25-feature enterprise AI platform with hybrid RAG (60% semantic + 40% BM25), AI-driven country research, ERP gap assessment, proposal generator, and role-based access control. Reduced compliance research time by 70%.
+              </p>
+              <div class="feat-card__tags">
+                <span class="feat-card__tag">FastAPI</span>
+                <span class="feat-card__tag">PostgreSQL</span>
+                <span class="feat-card__tag">ChromaDB</span>
+                <span class="feat-card__tag">GROQ</span>
+                <span class="feat-card__tag">Gemini</span>
+                <span class="feat-card__tag">BM25</span>
+                <span class="feat-card__tag">Docker</span>
+              </div>
+              <div class="feat-card__footer">
+                <span class="feat-card__status"><i class="fas fa-circle-check"></i> In Production · Cygnet.One</span>
+              </div>
+            </article>
+            <!-- /END Project -->
+
+            <!-- Financial Fraud Detection ML System -->
+            <article class="feat-card">
+              <div class="feat-card__icon"><i class="fas fa-shield-halved"></i></div>
+              <h3 class="feat-card__title">Financial Fraud Detection ML System</h3>
+              <p class="feat-card__desc">
+                End-to-end ML pipeline achieving 90% accuracy using IQR/Z-score outlier detection, cash violation rules (Rs 10K threshold), and voucher gap analysis. Deployed via FastAPI + Docker with a GROQ-powered AI chatbot.
+              </p>
+              <div class="feat-card__tags">
+                <span class="feat-card__tag">Python</span>
+                <span class="feat-card__tag">Scikit-learn</span>
+                <span class="feat-card__tag">XGBoost</span>
+                <span class="feat-card__tag">FastAPI</span>
+                <span class="feat-card__tag">PostgreSQL</span>
+                <span class="feat-card__tag">Streamlit</span>
+                <span class="feat-card__tag">Docker</span>
+                <span class="feat-card__tag">GROQ</span>
+              </div>
+              <div class="feat-card__footer">
+                <span class="feat-card__status"><i class="fas fa-circle-check"></i> In Production · CA Firms</span>
+                <a class="feat-card__link" href="https://github.com/kingprince35" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </article>
+            <!-- /END Project -->
+
+            <!-- Tally-to-PostgreSQL ETL Pipeline -->
+            <article class="feat-card">
+              <div class="feat-card__icon"><i class="fas fa-database"></i></div>
+              <h3 class="feat-card__title">Tally-to-PostgreSQL ETL Pipeline</h3>
+              <p class="feat-card__desc">
+                Production ETL pipeline syncing Tally XML to PostgreSQL using GUID primary keys and ALTERID incremental sync. Reduced sync time from 10 minutes to 30 seconds with full UPSERT handling.
+              </p>
+              <div class="feat-card__tags">
+                <span class="feat-card__tag">Python</span>
+                <span class="feat-card__tag">PostgreSQL</span>
+                <span class="feat-card__tag">SQLAlchemy</span>
+                <span class="feat-card__tag">XML Parsing</span>
+                <span class="feat-card__tag">UPSERT</span>
+                <span class="feat-card__tag">ALTERID</span>
+              </div>
+              <div class="feat-card__footer">
+                <a class="feat-card__link" href="https://github.com/kingprince35" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </article>
+            <!-- /END Project -->
+
+            <!-- KNIME Multi-Country E-Invoicing Pipeline -->
+            <article class="feat-card">
+              <div class="feat-card__icon"><i class="fas fa-diagram-project"></i></div>
+              <h3 class="feat-card__title">KNIME Multi-Country E-Invoicing Pipeline</h3>
+              <p class="feat-card__desc">
+                Enterprise ETL pipeline automating invoice compliance for UAE Peppol, Poland KSeF, and Belgium B2B on production Linux servers. Docker-containerized with a PowerShell file watcher, delivering an 80% reduction in manual effort.
+              </p>
+              <div class="feat-card__tags">
+                <span class="feat-card__tag">KNIME</span>
+                <span class="feat-card__tag">Python</span>
+                <span class="feat-card__tag">Docker</span>
+                <span class="feat-card__tag">JSON</span>
+                <span class="feat-card__tag">XML</span>
+                <span class="feat-card__tag">PostgreSQL</span>
+                <span class="feat-card__tag">Linux</span>
+                <span class="feat-card__tag">SFTP</span>
+                <span class="feat-card__tag">PowerShell</span>
+              </div>
+              <div class="feat-card__footer">
+                <span class="feat-card__status"><i class="fas fa-circle-check"></i> In Production · Cygnet.One</span>
+              </div>
+            </article>
+            <!-- /END Project -->
+
+            <!-- AI Data Analysis Agent (Streamlit) -->
+            <article class="feat-card">
+              <div class="feat-card__icon"><i class="fas fa-chart-line"></i></div>
+              <h3 class="feat-card__title">AI Data Analysis Agent</h3>
+              <p class="feat-card__desc">
+                AI agent that auto-analyzes uploaded datasets and generates insights using prompt engineering. Features a 6-tab Streamlit interface with a modular OOP architecture, delivering an 80% reduction in manual analysis.
+              </p>
+              <div class="feat-card__tags">
+                <span class="feat-card__tag">Python</span>
+                <span class="feat-card__tag">Streamlit</span>
+                <span class="feat-card__tag">OpenAI API</span>
+                <span class="feat-card__tag">GROQ API</span>
+                <span class="feat-card__tag">Pandas</span>
+              </div>
+              <div class="feat-card__footer">
+                <a class="feat-card__link" href="https://github.com/kingprince35" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </article>
+            <!-- /END Project -->
+
+            <!-- AI-Based Data Analysis Agent (original) -->
+            <article class="feat-card">
+              <div class="feat-card__icon"><i class="fas fa-robot"></i></div>
+              <h3 class="feat-card__title">AI-Based Data Analysis Agent</h3>
+              <p class="feat-card__desc">
+                AI-powered data analysis agent that automatically analyzes datasets and generates insights using prompt engineering and OpenAI API integration. Interactive Streamlit interface lets users upload data and receive automated analytical reports with comprehensive visualizations.
+              </p>
+              <div class="feat-card__tags">
+                <span class="feat-card__tag">Python</span>
+                <span class="feat-card__tag">OpenAI API</span>
+                <span class="feat-card__tag">Streamlit</span>
+                <span class="feat-card__tag">Prompt Engineering</span>
+                <span class="feat-card__tag">Pandas</span>
+              </div>
+              <div class="feat-card__footer">
+                <a class="feat-card__link" href="https://github.com/kingprince35" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> GitHub</a>
+              </div>
+            </article>
+            <!-- /END Project -->
+
+            <!-- KNIME Invoice Automation -->
+            <article class="feat-card">
+              <div class="feat-card__icon"><i class="fas fa-gears"></i></div>
+              <h3 class="feat-card__title">KNIME Invoice Automation & E-Invoicing Workflow</h3>
+              <p class="feat-card__desc">
+                End-to-end KNIME workflow for invoice processing including validation, mapping, and JSON/XML generation. Automated using Linux shell scripting and SFTP for enterprise-level ETL pipelines and data validation deployed on production servers.
+              </p>
+              <div class="feat-card__tags">
+                <span class="feat-card__tag">KNIME</span>
+                <span class="feat-card__tag">Linux</span>
+                <span class="feat-card__tag">SFTP</span>
+                <span class="feat-card__tag">JSON</span>
+                <span class="feat-card__tag">XML</span>
+                <span class="feat-card__tag">ETL</span>
+              </div>
+              <div class="feat-card__footer">
+                <span class="feat-card__status"><i class="fas fa-circle-check"></i> Deployed on Production Servers</span>
+              </div>
+            </article>
+            <!-- /END Project -->
+
+            <!-- CA Dashboard Audit Tool -->
+            <article class="feat-card">
+              <div class="feat-card__icon"><i class="fas fa-chart-column"></i></div>
+              <h3 class="feat-card__title">CA Dashboard Audit Tool with Database Integration</h3>
+              <p class="feat-card__desc">
+                Comprehensive CA forms audit dashboard with database integration featuring outlier detection, missing value analysis, and festival/quarter-wise analysis with multiple chart visualizations. In active use for CA consulting and audit automation.
+              </p>
+              <div class="feat-card__tags">
+                <span class="feat-card__tag">Python</span>
+                <span class="feat-card__tag">PostgreSQL</span>
+                <span class="feat-card__tag">Data Visualization</span>
+                <span class="feat-card__tag">Outlier Detection</span>
+              </div>
+              <div class="feat-card__footer">
+                <span class="feat-card__status"><i class="fas fa-circle-check"></i> In Active Use</span>
+              </div>
+            </article>
+            <!-- /END Project -->
+
+            <!-- Bank Loan Analysis -->
+            <article class="feat-card">
+              <div class="feat-card__icon"><i class="fas fa-chart-pie"></i></div>
+              <h3 class="feat-card__title">Bank Loan Data Analysis Dashboard</h3>
+              <p class="feat-card__desc">
+                Analyzed loan approval data to understand customer behavior, trends, and risk factors using decision support dashboards. Applied SQL for data extraction and Tableau for interactive visualizations, enabling data-driven lending decisions.
+              </p>
+              <div class="feat-card__tags">
+                <span class="feat-card__tag">SQL</span>
+                <span class="feat-card__tag">Tableau</span>
+                <span class="feat-card__tag">Data Analysis</span>
+              </div>
+              <div class="feat-card__footer">
+                <a class="feat-card__link" href="https://public.tableau.com/views/Bank_Loan_17234912872280/Summary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a>
+                <a class="feat-card__link" href="https://drive.google.com/file/d/1RDk9SGCSiZi4E4II1hb7NtZRf-LdpSSF/view?usp=sharing" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i> Source</a>
+              </div>
+            </article>
+            <!-- /END Project -->
+
+            <!-- Social Media Analysis -->
+            <article class="feat-card">
+              <div class="feat-card__icon"><i class="fas fa-share-nodes"></i></div>
+              <h3 class="feat-card__title">Social Media Analysis Dashboard</h3>
+              <p class="feat-card__desc">
+                Analyzed social media data from Instagram, YouTube, TikTok, and music platforms to understand engagement trends and performance metrics. Created interactive Power BI dashboards presenting insights on user behavior and content performance across platforms.
+              </p>
+              <div class="feat-card__tags">
+                <span class="feat-card__tag">Power BI</span>
+                <span class="feat-card__tag">Python</span>
+                <span class="feat-card__tag">Google Colab</span>
+              </div>
+              <div class="feat-card__footer">
+                <a class="feat-card__link" href="https://app.powerbi.com/reportEmbed?reportId=44e00c30-123d-4004-9457-e123511d90fb&autoAuth=true&ctid=8b7de264-0f52-4308-b632-89d93e93c254" target="_blank" rel="noopener noreferrer"><i class="fas fa-arrow-up-right-from-square"></i> Live Demo</a>
+                <a class="feat-card__link" href="https://github.com/kingprince35/Social-Media-Analysis/tree/main/Colab%20Code" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i> Source</a>
+              </div>
+            </article>
+            <!-- /END Project -->
+
+          </div>
+          <!-- /END Featured Grid -->
 
         </div>
       </div>
@@ -467,7 +838,7 @@
         <div class="expression-content">
           <p>
             I am currently working at <span class="highlight">Cygnet.One</span> as an
-            <span class="highlight">Associate Engineer</span> (July 2025 - Present) specializing in
+            <span class="highlight">Associate Software Engineer, Data Analytics and AI</span> (July 2025 - Present) specializing in
             <span class="highlight">Data Analytics, AI & Automation</span>.
             Prior to this, I completed a 6-month internship (January - June 2025) as a Data Analytics Intern
             at the same organization, gaining hands-on experience with real-world datasets and AI/ML applications.
@@ -513,6 +884,15 @@
           <div class="tool-card"><p>Seaborn</p></div>
           <div class="tool-card"><p>Scikit-learn</p></div>
           <div class="tool-card"><p>Streamlit</p></div>
+          <div class="tool-card"><p>LangChain</p></div>
+          <div class="tool-card"><p>ChromaDB</p></div>
+          <div class="tool-card"><p>FastAPI</p></div>
+          <div class="tool-card"><p>SQLAlchemy</p></div>
+          <div class="tool-card"><p>XGBoost</p></div>
+          <div class="tool-card"><p>Docker</p></div>
+          <div class="tool-card"><p>Linux</p></div>
+          <div class="tool-card"><p>Git</p></div>
+          <div class="tool-card"><p>Selenium</p></div>
         </div>
       </div>
     </section>
@@ -528,6 +908,11 @@
         </div>
       </div>
     </section>
+
+    <!-- Theme (dark mode) toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+    </button>
 
     <!-- Chatbot Widget -->
     <div class="chat-widget">
@@ -579,13 +964,34 @@
         <hr />
         <p class="footer__text">
           © Copyright
-          <span id="year"></span> Prince Prajapati — Data Analyst & AI/ML Engineer
+          <span id="year"></span> Prince Prajapati — AI Engineer | LLM, GenAI & RAG Systems
         </p>
       </div>
     </footer>
 
     <script>
       document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Dark mode toggle with persistence + system preference
+      (function () {
+        const toggle = document.getElementById("themeToggle");
+        const icon = toggle.querySelector("i");
+        const stored = localStorage.getItem("theme");
+        const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+        function apply(dark) {
+          document.body.classList.toggle("dark-mode", dark);
+          icon.className = dark ? "fas fa-sun" : "fas fa-moon";
+        }
+
+        apply(stored ? stored === "dark" : prefersDark);
+
+        toggle.addEventListener("click", function () {
+          const dark = !document.body.classList.contains("dark-mode");
+          apply(dark);
+          localStorage.setItem("theme", dark ? "dark" : "light");
+        });
+      })();
     </script>
 
     <script src="./javascript/vanilla-tilt.min.js"></script>
